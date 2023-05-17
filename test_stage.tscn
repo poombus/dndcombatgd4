@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdftkowvmj0r0"]
+
+[ext_resource type="PackedScene" uid="uid://mpmttix3xyjm" path="res://classes/Pawn/Player/player.tscn" id="1_l1g72"]
+[ext_resource type="Texture2D" uid="uid://bk8xqq0l1tdpc" path="res://assets/textures/skyboxes/6af62da6626c4961ac4325eaf366ed5c.jpeg" id="1_u0l0s"]
+[ext_resource type="AudioStream" uid="uid://2od6obp0nad6" path="res://assets/audio/music/Limbus Company - Canto I Battle Theme A1.wav" id="2_4kjnj"]
+[ext_resource type="PackedScene" uid="uid://dwg7p5h7abodh" path="res://pawns/enemies/test_enemy/test_enemy.tscn" id="3_56p83"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q7gr"]
+size = Vector3(300, 1, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ydarm"]
+size = Vector3(300, 1, 40)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r4lcp"]
+panorama = ExtResource("1_u0l0s")
+
+[sub_resource type="Sky" id="Sky_ygr2r"]
+sky_material = SubResource("PanoramaSkyMaterial_r4lcp")
+
+[sub_resource type="Environment" id="Environment_ycqil"]
+background_mode = 2
+background_color = Color(0.239216, 0.239216, 0.239216, 1)
+sky = SubResource("Sky_ygr2r")
+sky_custom_fov = 124.0
+sky_rotation = Vector3(-0.279253, 4.13469, -0.349066)
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_intensity = 1.99
+glow_blend_mode = 0
+glow_hdr_threshold = 0.0
+glow_hdr_scale = 1.96
+adjustment_enabled = true
+adjustment_saturation = 1.51
+
+[node name="Test Stage" type="Node3D"]
+
+[node name="Platform" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
+shape = SubResource("BoxShape3D_3q7gr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+mesh = SubResource("BoxMesh_ydarm")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, -0.00174522, 0, 0.00174522, 0.999999, 0, 4.32259, 13.673)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.761131, 0.648598, 0, -0.648598, 0.761131, 0, 13.9719, 18.9229)
+light_energy = 0.184
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ycqil")
+
+[node name="Player3D" parent="." instance=ExtResource("1_l1g72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.939, 1.53773, 4.67)
+
+[node name="Test Enemy" parent="." instance=ExtResource("3_56p83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84427, 1.54397, 4.45128)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4kjnj")
+volume_db = -13.236
+autoplay = true

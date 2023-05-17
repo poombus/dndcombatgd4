@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://csaxrcnj5uaoe"]
+
+[node name="Combat GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Action Menus" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Skills Menu" type="MenuButton" parent="Action Menus"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 288.0
+grow_vertical = 0
+text = "Skills"
+item_count = 2
+popup/item_0/text = "item 1"
+popup/item_0/id = 0
+popup/item_1/text = "item 2"
+popup/item_1/id = 1
+
+[node name="Spells Menu" type="MenuButton" parent="Action Menus"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = -31.0
+offset_right = 576.0
+grow_vertical = 0
+text = "Spells
+"
+item_count = 2
+popup/item_0/text = "item 1"
+popup/item_0/id = 0
+popup/item_1/text = "item 2"
+popup/item_1/id = 1
+
+[node name="Misc Menu" type="MenuButton" parent="Action Menus"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 288.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Misc. Actions"
+item_count = 2
+popup/item_0/text = "item 1"
+popup/item_0/id = 0
+popup/item_1/text = "item 2"
+popup/item_1/id = 1
+
+[node name="Item Menu" type="MenuButton" parent="Action Menus"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Inventory"
+item_count = 2
+popup/item_0/text = "item 1"
+popup/item_0/id = 0
+popup/item_1/text = "item 2"
+popup/item_1/id = 1

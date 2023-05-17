@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://mpmttix3xyjm"]
+
+[ext_resource type="Script" path="res://classes/Pawn/Player/Player.gd" id="1_0kcdj"]
+[ext_resource type="Texture2D" uid="uid://cqslb0rh7q3ka" path="res://assets/textures/entites/test_player/tile_0096.png" id="2_0br0y"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q4rl1"]
+
+[node name="Player3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99253, 0)
+script = ExtResource("1_0kcdj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_q4rl1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.513003, 0)
+pixel_size = 0.06
+billboard = 1
+shaded = true
+texture_filter = 0
+texture = ExtResource("2_0br0y")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://4tknrbl61e8s"]
+
+[ext_resource type="PackedScene" uid="uid://ixah6f7r6tbx" path="res://hud/pawn_info.tscn" id="1_o7vl1"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PawnInfo" parent="." instance=ExtResource("1_o7vl1")]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -187.5
+offset_right = 340.0
+offset_bottom = 187.5
+grow_vertical = 2
