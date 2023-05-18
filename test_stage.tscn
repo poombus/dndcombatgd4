@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdftkowvmj0r0"]
+[gd_scene load_steps=12 format=3 uid="uid://bdftkowvmj0r0"]
 
+[ext_resource type="Script" path="res://test_stage.gd" id="1_idsel"]
 [ext_resource type="PackedScene" uid="uid://mpmttix3xyjm" path="res://classes/Pawn/Player/player.tscn" id="1_l1g72"]
 [ext_resource type="Texture2D" uid="uid://bk8xqq0l1tdpc" path="res://assets/textures/skyboxes/6af62da6626c4961ac4325eaf366ed5c.jpeg" id="1_u0l0s"]
 [ext_resource type="AudioStream" uid="uid://2od6obp0nad6" path="res://assets/audio/music/Limbus Company - Canto I Battle Theme A1.wav" id="2_4kjnj"]
+[ext_resource type="PackedScene" uid="uid://csaxrcnj5uaoe" path="res://hud/combat_gui.tscn" id="2_lef8i"]
 [ext_resource type="PackedScene" uid="uid://dwg7p5h7abodh" path="res://pawns/enemies/test_enemy/test_enemy.tscn" id="3_56p83"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3q7gr"]
@@ -34,6 +36,7 @@ adjustment_enabled = true
 adjustment_saturation = 1.51
 
 [node name="Test Stage" type="Node3D"]
+script = ExtResource("1_idsel")
 
 [node name="Platform" type="StaticBody3D" parent="."]
 
@@ -65,3 +68,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84427, 1.54397, 4.45128)
 stream = ExtResource("2_4kjnj")
 volume_db = -13.236
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Combat GUI" parent="." instance=ExtResource("2_lef8i")]
+offset_bottom = -2.0

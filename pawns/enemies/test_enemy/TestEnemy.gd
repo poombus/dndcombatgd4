@@ -1,1 +1,1 @@
-extends Pawn
+extends NPC

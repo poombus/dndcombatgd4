@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalSignals="*res://classes/Global/GlobalSignals.gd"
 GlobalEnums="*res://classes/Global/GlobalEnums.gd"
 GlobalBuilder="*res://classes/Global/GlobalBuilder.gd"
+GlobalCM="*res://classes/Combat/CombatManager.gd"
 
 [display]
 
