@@ -1,0 +1,22 @@
+{
+	"double_slash":{
+		"name": "Double Slash",
+		"energy_cost":1,
+		"min_level":0,
+		"dice": [
+			{
+				"minmax": [1,4],
+				"dicetype": "MELEE",
+				"dmgtype": "SLASHING",
+				"dmgelement": "NORMAL"
+			},
+			{
+				"minmax": [1,4],
+				"dicetype": "MELEE",
+				"dmgtype": "SLASHING",
+				"dmgelement": "NORMAL"
+			}
+		]
+		
+	}
+}
