@@ -39,6 +39,7 @@ var inventory;
 var traits; #feats and traits
 
 func _ready():
+	print(GlobalBuilder.skills)
 	#Setup Ability Scores
 	for stat in AS: 
 		abilityScores[stat] = {

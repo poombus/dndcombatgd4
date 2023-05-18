@@ -6,3 +6,6 @@ class_name Skills
 @export var display_name:String = "Unnamed Skill";
 
 var dice:Array[Dice];
+var min_level: int=0 
+var energy_cost
+
