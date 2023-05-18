@@ -17,6 +17,31 @@
 				"dmgelement": "NORMAL"
 			}
 		]
-		
+	},
+	"stellar_slash":{
+		"name": "Stellar Slash",
+		"energy_cost":1,
+		"min_level":0,
+		"dice": [
+			{
+				"minmax": [2,8],
+				"dicetype": "MELEE",
+				"dmgtype": "SLASHING",
+				"dmgelement": "RADIANT"
+			}
+		]
+	},
+	"astral_projectile":{
+		"name": "Astral Projectile",
+		"energy_cost":1,
+		"min_level":0,
+		"dice": [
+			{
+				"minmax": [1,4],
+				"dicetype": "RANGED",
+				"dmgtype": "SLASHING",
+				"dmgelement": "RADIANT"
+			}
+		]
 	}
 }

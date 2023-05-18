@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://csaxrcnj5uaoe"]
+[gd_scene load_steps=2 format=3 uid="uid://csaxrcnj5uaoe"]
+
+[ext_resource type="Script" path="res://hud/combat_gui.gd" id="1_gxutb"]
 
 [node name="Combat GUI" type="Control"]
 layout_mode = 3
@@ -7,6 +9,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gxutb")
+metadata/_edit_lock_ = true
 
 [node name="Action Menus" type="Control" parent="."]
 layout_mode = 1

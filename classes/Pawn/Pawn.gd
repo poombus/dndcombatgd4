@@ -34,12 +34,16 @@ var resistances:Array;
 var immunities:Array;
 
 #collection (dunno whether to use arrays or dicts)
+var skills:Array[Skills]
 var spells;
 var inventory;
 var traits; #feats and traits
 
 func _ready():
-	print(GlobalBuilder.skills)
+	skills.append(GlobalBuilder.skills[0])
+	skills.append(GlobalBuilder.skills[1])
+	skills.append(GlobalBuilder.skills[2])
+	print(skills[0].display_name)
 	#Setup Ability Scores
 	for stat in AS: 
 		abilityScores[stat] = {
