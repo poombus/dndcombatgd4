@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqkcnwyymsg6c"]
+
+[ext_resource type="Texture2D" uid="uid://x6h7qnb57vml" path="res://assets/textures/icons/speed_dice.png" id="1_1t4u8"]
+
+[node name="Speed Dice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Dice Texture" type="TextureRect" parent="."]
+modulate = Color(1, 1, 0.776471, 1)
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1t4u8")
+metadata/_edit_lock_ = true
+
+[node name="Number" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 38.0
+offset_right = 115.0
+offset_bottom = 93.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]0[/center]"
+fit_content = true
+autowrap_mode = 0

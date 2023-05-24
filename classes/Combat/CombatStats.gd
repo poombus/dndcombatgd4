@@ -1,7 +1,7 @@
 extends Node
 class_name CombatStats
 
-var parent:Pawn;
+var pawn:Pawn;
 
 var energy:int = 3;
 var ep:Dictionary = { #emotion points
@@ -21,7 +21,7 @@ var othActions; #running
 var invActions; #only show items that can be used in combat
 
 func _init(i_parent:Pawn):
-	parent = i_parent;
+	pawn = i_parent;
 
 func setup():
 	energy = 3;
@@ -42,4 +42,4 @@ func setEP(pos:= 0, neg:=0):
 	}
 
 func test():
-	print(parent.name, " says hi");
+	print(pawn.name, " says hi");

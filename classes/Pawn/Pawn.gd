@@ -23,6 +23,8 @@ var saveThrowProfs:Array; #saving throw proficiency
 
 var maxhp:int = 20;
 var hp:int = 20;
+var maxsr:int = 20;
+var sr:int = 20;
 
 var ac:int; #armor class
 
@@ -40,11 +42,20 @@ var inventory;
 var traits; #feats and traits
 
 func _ready():
-	skills.append(GlobalBuilder.skills[0])
-	skills.append(GlobalBuilder.skills[1])
-	skills.append(GlobalBuilder.skills[2])
-	print(skills[0].display_name)
 	#Setup Ability Scores
+	setup_as();
+	
+	#Connecting Signals
+	self.connect("input_event",_on_input_event);
+	
+	var nameplate = load("res://hud/nameplate_sprite.tscn").instantiate();
+	nameplate.get_child(0).get_child(0).init(self);
+	self.add_child(nameplate);
+
+var ethics:GlobalEnums.ETHICS;
+var morals:GlobalEnums.MORALS;
+
+func setup_as():
 	for stat in AS: 
 		abilityScores[stat] = {
 			"base": 1,
@@ -53,12 +64,6 @@ func _ready():
 			"misc_bonus": 0,
 			"other_bonus": 0
 		}
-	
-	#Connecting Signals
-	self.connect("input_event",_on_input_event);
-
-var ethics:GlobalEnums.ETHICS;
-var morals:GlobalEnums.MORALS;
 
 #getters n' setters
 func set_as(a:AS, val:int, bonus:String = "base") -> void:

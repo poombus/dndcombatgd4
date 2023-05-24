@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://crn84f3cx20td"]
+
+[ext_resource type="Texture2D" uid="uid://d3xm3n1mrl1ah" path="res://assets/textures/hud/nameplate.png" id="1_ehju8"]
+[ext_resource type="Script" path="res://hud/nameplate.gd" id="1_oyaxy"]
+[ext_resource type="Texture2D" uid="uid://bosjx73n8avlv" path="res://assets/textures/icons/heart_ic.png" id="2_r4t8n"]
+[ext_resource type="Texture2D" uid="uid://7rfjme2r7gqb" path="res://assets/textures/icons/shield_ic.png" id="3_2vkki"]
+[ext_resource type="Texture2D" uid="uid://4e7urvx8kmd5" path="res://assets/textures/icons/ep_4.png" id="4_xrc5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jcap"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfxbg"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68s5a"]
+bg_color = Color(1, 1, 0, 1)
+
+[node name="Pawn Nameplate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyaxy")
+metadata/_edit_lock_ = true
+
+[node name="Nameplate Texture" type="TextureRect" parent="."]
+modulate = Color(0.741176, 0.741176, 0.741176, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_ehju8")
+
+[node name="Name" type="RichTextLabel" parent="Nameplate Texture"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 45.0
+offset_right = 468.0
+offset_bottom = 70.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "NAME HERE"
+fit_content = true
+
+[node name="Health" type="ProgressBar" parent="Nameplate Texture"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 80.0
+offset_right = 430.0
+offset_bottom = 100.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8jcap")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vfxbg")
+value = 50.0
+show_percentage = false
+
+[node name="Stagger Resist" type="ProgressBar" parent="Nameplate Texture"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 110.0
+offset_right = 430.0
+offset_bottom = 130.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8jcap")
+theme_override_styles/fill = SubResource("StyleBoxFlat_68s5a")
+value = 50.0
+show_percentage = false
+
+[node name="HealthIC" type="TextureRect" parent="Nameplate Texture"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 76.0
+offset_right = 201.0
+offset_bottom = 106.0
+texture = ExtResource("2_r4t8n")
+expand_mode = 1
+
+[node name="StaggerIC" type="TextureRect" parent="Nameplate Texture"]
+modulate = Color(1, 1, 0, 1)
+offset_left = 169.0
+offset_top = 106.0
+offset_right = 200.0
+offset_bottom = 137.0
+texture = ExtResource("3_2vkki")
+expand_mode = 1
+
+[node name="Emotion Level" type="TextureRect" parent="Nameplate Texture"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 46.0
+offset_top = 51.0
+offset_right = 142.0
+offset_bottom = 147.0
+texture = ExtResource("4_xrc5d")

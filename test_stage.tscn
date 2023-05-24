@@ -27,7 +27,6 @@ sky_custom_fov = 124.0
 sky_rotation = Vector3(-0.279253, 4.13469, -0.349066)
 ssao_enabled = true
 ssil_enabled = true
-glow_enabled = true
 glow_intensity = 1.99
 glow_blend_mode = 0
 glow_hdr_threshold = 0.0
@@ -52,7 +51,6 @@ current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.761131, 0.648598, 0, -0.648598, 0.761131, 0, 13.9719, 18.9229)
-light_energy = 0.184
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -60,17 +58,17 @@ environment = SubResource("Environment_ycqil")
 
 [node name="Player3D" parent="." instance=ExtResource("1_l1g72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.939, 1.53773, 4.67)
+display_name = "Bob the Hero"
 
 [node name="Test Enemy" parent="." instance=ExtResource("3_56p83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.84427, 1.54397, 4.45128)
+display_name = "Skeleton A"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4kjnj")
 volume_db = -13.236
+pitch_scale = 1.3
 autoplay = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
 
 [node name="Combat GUI" parent="." instance=ExtResource("2_lef8i")]
 offset_bottom = -2.0

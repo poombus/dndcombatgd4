@@ -24,6 +24,7 @@ GlobalCM="*res://classes/Combat/CombatManager.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [importer_defaults]

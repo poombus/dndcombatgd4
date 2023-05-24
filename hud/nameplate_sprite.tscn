@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://fydulwsdq8pa"]
+
+[ext_resource type="PackedScene" uid="uid://crn84f3cx20td" path="res://hud/nameplate.tscn" id="1_13mhe"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_opat0"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Pawn Nameplate" parent="SubViewport" instance=ExtResource("1_13mhe")]
+
+[node name="Nameplate Sprite" type="Sprite3D" parent="."]
+offset = Vector2(0, -50)
+billboard = 1
+no_depth_test = true
+render_priority = 127
+texture = SubResource("ViewportTexture_opat0")
